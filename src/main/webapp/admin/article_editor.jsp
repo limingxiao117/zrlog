@@ -46,7 +46,7 @@
         width: 100%;
     }
 </style>
-<c:if test="${'off' eq webSite['article_thumbnail']}">
+<c:if test="${1 ne webSite['article_thumbnail_status']}">
     <div class="page-header">
         <h3>
                 ${_res['admin.log.edit']}
@@ -61,7 +61,7 @@
             <input type="hidden" id="id" name="id" value="${log.logId}">
             <textarea placeholder="${_res.editorPlaceholder}" id="content" name="content"
                       style="display: none;">${log.content}</textarea>
-            <c:if test="${'off' ne webSite['article_thumbnail']}">
+            <c:if test="${0 ne webSite['article_thumbnail_status']}">
                 <div class="form-group">
                     <div class="WriteCover-wrapper">
                         <div id="thumbnail-img" title="${_res['writeCover']}"
